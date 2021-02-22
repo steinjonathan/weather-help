@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/steinjonathan/weather-help/issues"
   },
-  "homepage": "https://github.com/steinjonathan/weather-help#readme"
+  "homepage": "https://github.com/steinjonathan/weather-help#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }
