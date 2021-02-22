@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  weather-app:
+    build: ./app
+    # ports:
+    #   - "5000:5000"
