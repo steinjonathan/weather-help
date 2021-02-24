@@ -14,6 +14,7 @@ const printResult = (city, dayForecast) => {
     console.log('> temperature >',dayForecast.temp)
     console.log('> weather >',dayForecast.weather)
     console.log('> rain >',dayForecast.rain)
+    console.log('------------------------------')
 }
 
 const getCityForecast = async (city) => {
