@@ -12,9 +12,11 @@ RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 
+COPY . /usr/src/app
+
 # Bundle app source
 COPY . .
 
 # EXPOSE 3000
 
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "dev" ]

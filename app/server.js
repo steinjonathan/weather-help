@@ -1,4 +1,7 @@
 const weatherApi = require('./services/openWeatherMap.service')
+const db = require('./models')
+
+db.authenticate().then(() => console.log('eeeerree'))
 
 // https://openweathermap.org/city/3451189
 const cities = [
@@ -10,7 +13,7 @@ const cities = [
 ]
 
 const printResult = (city, dayForecast) => {
-    console.log(city.name, '>', new Date(+dayForecast.dt * 1000))
+    console.log(city.name, '>', new Date(+dayForecast.dt * 1000)) 
     console.log('> temperature >',dayForecast.temp)
     console.log('> weather >',dayForecast.weather)
     console.log('> rain >',dayForecast.rain)
@@ -20,7 +23,9 @@ const printResult = (city, dayForecast) => {
 const getCityForecast = async (city) => {
     const result = await weatherApi.getForecastByCity(city.lat, city.lon)
     
-    result.data.daily.forEach(dayForecast => printResult(city, dayForecast))
+    if (result) {
+        result.data.daily.forEach(dayForecast => printResult(city, dayForecast))
+    }
 
 }
 
