@@ -1,4 +1,4 @@
-const weatherApi = require('./services/openWeatherMap.service')
+const weatherApi = require('./services/openWeatherMap')
 const db = require('./datasource/postgres')
 
 require('dotenv').config()
