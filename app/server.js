@@ -1,6 +1,8 @@
 const weatherApi = require('./services/openWeatherMap.service')
 const db = require('./models')
 
+require('dotenv').config()
+
 db.authenticate().then(() => console.log('eeeerree'))
 
 // https://openweathermap.org/city/3451189
