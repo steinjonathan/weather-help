@@ -1,7 +1,18 @@
-const weatherApi = require('./services/openWeatherMap')
+
+const express = require('express')
 const db = require('./datasource/postgres')
+const dotenv = require('dotenv')
+const routes = require('./routes')
 
-require('dotenv').config()
+const app = express()
 
-db.authenticate().then(() => console.log('Postgre Connected Succesfuly'))
+routes.configure(app)
+
+app.listen(3000, _ => {
+    console.log('App listening on port :3000')
+    dotenv.config()
+    db.authenticate().then(() => console.log('Postgre Connected Succesfuly'))
+})
+
+
 

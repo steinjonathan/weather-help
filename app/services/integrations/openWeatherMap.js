@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const apiKey = process.ENV.OPENWEATHERAPI_KEY
+const apiKey = process.env.OPENWEATHERAPI_KEY
 
 // https://openweathermap.org/api/one-call-api
 
