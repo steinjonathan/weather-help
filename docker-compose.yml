@@ -1,10 +1,10 @@
 version: "3.3"
 services:
-  postgres:
+  postgresWeatherDB:
     image: postgres:13
-    container_name: "postgresCitiesWeather"
+    container_name: "postgresWeatherDB"
     environment:
-      - POSTGRES_DB=CitiesWeather
+      - POSTGRES_DB=WeatherDB
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=stein
       - TZ=GMT
@@ -15,9 +15,13 @@ services:
 
   weather-app:
     build: ./app
+    container_name: "weather-app"
+    environment: 
+      - NODE_ENV=development
     volumes:
       - ./app:/usr/src/app
+      - /usr/src/app/node_modules
     links:
-      - "postgres"
+      - "postgresWeatherDB"
     ports:
       - "3000:3000"

@@ -1,0 +1,21 @@
+{
+  "name": "weather-help",
+  "version": "1.0.0",
+  "description": "Run docker-compose up to serve the application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker-compose build",
+    "dev": "docker-compose up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steinjonathan/weather-help.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steinjonathan/weather-help/issues"
+  },
+  "homepage": "https://github.com/steinjonathan/weather-help#readme"
+}
